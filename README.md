@@ -21,3 +21,20 @@ Launch with Siege like this:
 ```siege -f test_urls.txt -c 32 -d 3 -i -v -H "Auth-Token: my.supersecret.jwt"```
 
 it will open 32 connections, and each one will call a random line from the file with a random delay of up to 3 seconds.
+
+Eg. output on 16 cpu elasticsearch:
+
+```
+Transactions:		        1088 hits
+Availability:		       99.36 %
+Elapsed time:		       98.40 secs
+Data transferred:	      132.97 MB
+Response time:		        1.31 secs
+Transaction rate:	       11.06 trans/sec
+Throughput:		        1.35 MB/sec
+Concurrency:		       14.48
+Successful transactions:        1088
+Failed transactions:	           7
+Longest transaction:	       11.73
+Shortest transaction:	        0.03
+```
