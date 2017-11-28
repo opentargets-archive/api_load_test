@@ -1,3 +1,9 @@
+How to get real load data
+-------------------------
+```sh
+gcloud logging read 'resource.type="gae_app" AND resource.labels.module_id="default" AND resource.labels.version_id="prod-20171108-1200" AND logName="projects/open-targets-api-prod-us/logs/appengine.googleapis.com%2Fnginx.request" AND httpRequest.userAgent!="runscope-radar/2.0"' --limit 1000 --project open-targets-api-prod-us --format json | jq -r '.[] | .httpRequest.requestUrl' > real_load.txt
+```
+
 TEST URLS
 ---------
 mixed url set composition: `test_urls.txt`
